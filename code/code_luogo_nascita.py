@@ -29,5 +29,5 @@ fig.update_layout(title="Luogo di nascita degli emigranti trentini",mapbox_style
 
 fig.update_layout(margin={"r":80,"t":40,"l":0,"b":0})
 
-fig.write_html("luogo_nascita.html")
+fig.write_html("Viz/luogo_nascita.html")
 
