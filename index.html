@@ -1,9 +1,30 @@
 <!DOCTYPE html>
 <head>
 <style>
-h1 {
-color:navy;
+
+.header {
+  padding: 10px 16px;
+  background: #555;
+  color: #f1f1f1;
+  text-align:center;
+  font-family:Helvetica;
 }
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+} 
+  
+ 
 h2 {
 color:navy;
 }
@@ -28,7 +49,7 @@ color:navy;
   
 <body>
 
-<h1 style="text-align:center;font-family:Helvetica"> Mapping Mobilities Stage: Visualizations</h1>
+<h1  class="header" id="myHeader"> Mapping Mobilities Stage: Visualizations</h1>
 
 <h2 style="text-align:center;font-family:Helvetica"> Il progetto </h2>
 <p class="p1"> Mapping Mobilities è un progetto della Fondazione Bruno Kessler in collaborazione con la Fondazione Museo storico del Trentino e 
@@ -54,6 +75,19 @@ Queste mappe sono state realizzate con i dati corrispondenti a circa 500 dei pas
 
 <iframe width="900" height="800" frameborder="0" scrolling="yes" src="//plotly.com/~BeatriceMarsili/2.embed" class="s"></iframe>
 
+<script>
+window.onscroll = function() {myFunction()};
 
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>
 </body>
 </html>
